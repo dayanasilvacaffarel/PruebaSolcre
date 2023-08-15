@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Pantalla de votación</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="pantallaVotacion.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+            <h3>Votar</h3>
+            <form id="add_new_voto">
+                <div class="form-group">
+                    <label class="control-label" for="documento">Documento:</label>
+                    <input type="text" class="form-control" id="documento"
+                           placeholder="Ingrese su cédula"
+                           name="documento" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="candidato">Seleccione candidato: </label>
+                    <select type="text" class="form-control" id="candidato"
+                           placeholder="Ingrese la candidato"
+                           name="candidato" required></select>
+                </div>
+
+
+
+                <button type="submit" class="btn btn-danger"
+                        id="btn-add-new-premio">VOTAR</button>
+            </form>
+            <div id="response" style="display:none; margin-top:10px">
+            </div>
+        </div>
+    </div>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="pantallaGestion.html">Acceso a gestión</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
