@@ -1,5 +1,6 @@
 package com.sistemavotacion.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -26,32 +27,26 @@ public class Voto {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public LocalDate getFecha() {
         return fecha;
     }
-
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
-
     public Candidato getCandidato() {
         return candidato;
     }
-
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
     }
-
     public Votante getVotante() {
         return votante;
     }
-
     public void setVotante(Votante votante) {
         this.votante = votante;
     }
+
 }

@@ -1,46 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const loginSection = document.getElementById("login-section");
-    const menuSection = document.getElementById("menu-section");
-    const loginForm = document.getElementById("login-form");
+// Acá tengo que capturar el botón "Ingresar" y mostrar una lista oculta
+//con InnerHTML insertar una lista de la votación
+//ordenado por los mas votados
 
-    loginForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Evitar envío del formulario
+function mostrarResultados(candidatos) {
+    var resultadosDiv = document.getElementById("resultadosVotacion");
+    var resultadosHTML = "<h3>Candidatos más votados:</h3><ul>";
 
-        // Aquí deberías realizar la lógica de autenticación
-        // Si la autenticación es exitosa, muestra la sección del menú
-        loginSection.style.display = "none";
-        menuSection.style.display = "block";
-    });
+    for (var i = 0; i < candidatos.length; i++) {
+        resultadosHTML += "<li>" + candidatos[i].nombre + ": " + candidatos[i].votos + " votos</li>";
+    }
 
-    // Aquí puedes agregar las acciones para cada opción del menú
-    const mostVotedOption = document.getElementById("most-voted");
-    const listVotesOption = document.getElementById("list-votes");
-    const voteDetailOption = document.getElementById("vote-detail");
-    const addEntityOption = document.getElementById("add-entity");
-    const changePasswordOption = document.getElementById("change-password");
-
-    mostVotedOption.addEventListener("click", function (event) {
-        event.preventDefault();
-        // Lógica para la opción "Postulantes más votados"
-    });
-
-    listVotesOption.addEventListener("click", function (event) {
-        event.preventDefault();
-        // Lógica para la opción "Listar votos ingresados"
-    });
-
-    voteDetailOption.addEventListener("click", function (event) {
-        event.preventDefault();
-        // Lógica para la opción "Ver detalle de voto"
-    });
-
-    addEntityOption.addEventListener("click", function (event) {
-        event.preventDefault();
-        // Lógica para la opción "Agregar nueva entidad"
-    });
-
-    changePasswordOption.addEventListener("click", function (event) {
-        event.preventDefault();
-        // Lógica para la opción "Modificar clave del usuario"
-    });
-});
+    resultadosHTML += "</ul>";
+    resultadosDiv.innerHTML = resultadosHTML;
+}
